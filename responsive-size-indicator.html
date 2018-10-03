@@ -1,0 +1,61 @@
+// Jens screen size indicators ===============================================================
+// Please delete before pushing to production ================================================
+    <div class="size-indicator">
+        <span class="view-x-smol">x-smol</span>
+        <span class="view-smol">smol</span>
+        <span class="view-med">med</span>
+        <span class="view-lrg">lrg</span>
+        <span class="view-x-lrg">x-lrg</span>
+    </div>
+	
+// Styles ===================================================================================
+<style>
+.size-indicator{
+    position: fixed;
+    top: 3px;
+    left: 3px;
+    font-size: 10px;
+    color: black;
+    text-shadow: 0 0 7px white;
+    padding: 5px 7px;
+    border-radius: 25px;
+    background-color: #bbb;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+
+    .view-x-smol {
+      @include media-breakpoint-up(sm) {
+        display: none;
+      }
+    }
+    .view-smol {
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+      @include media-breakpoint-down(xs) {
+        display: none;
+      }
+    }
+    .view-med {
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+    .view-lrg {
+      @include media-breakpoint-up(xl) {
+        display: none;
+      }
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+    .view-x-lrg {
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+}
+<style>
